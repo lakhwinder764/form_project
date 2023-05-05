@@ -6,6 +6,7 @@ import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import { collection, getDocs } from 'firebase/firestore';
 const App = () => {
   const [user, setUser] = useState();
+
   const fetchPost = async () => {
     await getDocs(collection(db, 'reactformik')).then((querySnapshot) => {
       const newData = querySnapshot.docs.map((doc) => ({
